@@ -28,39 +28,12 @@ def trueInput(symbol="") :
         return False
     return True
 
-# def trueInput(symbol=None) :
-    # valueInt = parseFirstChar(symbol)
-    # if valueInt==None : 
-    #     return False
-    # return True
-    # trueAlfabet = False
-    # text = ""
-    # if len(symbol) > 0 :
-    #     text = symbol[0]
-    # if (text in num):
-    #     trueAlfabet = True
-    # else :
-    #     try:
-    #         number = int(text)
-    #         print(number in num)
-    #         if (number in num):
-    #             trueAlfabet = True
-    #     except ValueError:
-    #         pass
-    # return trueAlfabet
-
 state = "q0"
 symbol = input("masukan karakter atau num : ")
 trueAlfabet = trueInput(symbol)
 
 firstChar = parseFirstChar(symbol)
 while ( trueAlfabet ) :
-    print(firstChar)
-    print(state)
-    if(firstChar in num) :
-        print("is num",firstChar in num)
-    else:
-        print("is symbol",firstChar in ekspressions)
     match state :
         case "q0" : 	
             if (firstChar in num) :
@@ -88,6 +61,7 @@ while ( trueAlfabet ) :
             else :
                 state = "qError"
                 break
+            
     symbol = input("masukan karakter atau num : ")
     
     firstChar = parseFirstChar(symbol)
@@ -95,6 +69,7 @@ while ( trueAlfabet ) :
     if firstChar==" " :
         state = "q4"
         break
+    
     trueAlfabet = trueInput(symbol)
     
 if state=="q4" and firstChar==" " :
