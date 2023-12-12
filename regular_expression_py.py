@@ -4,6 +4,7 @@ num = [0,1,2,3,4]
 def benarAlfabet(symbol) :
     trueAlfabet = False
     text = ""
+    
     if len(symbol) > 0 :
         text = symbol[0]
     if (text in kar):
